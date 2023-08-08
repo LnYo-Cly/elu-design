@@ -1,0 +1,11 @@
+node_modules
+dist
+types
+
+packages/theme-chalk/dist
+packages/utils/es
+packages/utils/lib
+packages/components.d.ts
+
+.idea
+.DS_Store

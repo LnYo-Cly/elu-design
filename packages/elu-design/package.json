@@ -1,0 +1,31 @@
+{
+  "name": "elu-design",
+  "version": "0.0.1",
+  "private": false,
+  "description": "elu-design for vue3",
+  "keywords": [
+    "elu-design",
+    "elu design",
+    "vue3"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "unpkg": "index.js",
+  "jsdelivr": "index.js",
+  "files": [
+    "es",
+    "lib",
+    "theme-chalk",
+    "index.esm.js",
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "LnYo-Cly",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LnYo-Cly/elu-design"
+  }
+}

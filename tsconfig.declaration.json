@@ -1,0 +1,12 @@
+// packages/vlib-ui/tsconfig.declaration.json
+{
+    "extends": "tsconfig.json",
+    "compilerOptions": {
+      "outDir": "types",
+      "declaration": true,
+      "emitDeclarationOnly": true
+    },
+    "include": ["packages/components"],
+    "exclude": ["node_modules", "**/__tests__/**", "**/__demos__/**", "**/*.md","dist","build","play","**/theme-chalk"]
+  }
+  
