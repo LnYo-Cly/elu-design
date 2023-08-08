@@ -10,9 +10,10 @@
     "build": "gulp -f build/gulpfile.ts",
     "dts": "vue-tsc -p tsconfig.declaration.json"
   },
-  "author": "WQ",
-  "license": "ISC",
+  "author": "LnYo-Cly",
+  "license": "MIT",
   "devDependencies": {
+    "@release-it/conventional-changelog": "^7.0.0",
     "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/gulp": "^4.0.13",
@@ -29,6 +30,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "pnpm": "^8.6.11",
+    "release-it": "^16.1.3",
     "rimraf": "^3.0.2",
     "rollup": "^3.27.2",
     "rollup-plugin-cleanup": "^3.2.1",

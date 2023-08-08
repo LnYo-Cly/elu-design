@@ -27,5 +27,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/LnYo-Cly/elu-design"
+  },
+  "scripts": {
+    "release": "release-it"
   }
 }
