@@ -23,7 +23,7 @@
     "skipLibCheck": true, // 跳过类库检测
 
   },
-
+  "types": ["vitest/globals"],
   "exclude": [
     // 排除掉哪些类库
     "node_modules",

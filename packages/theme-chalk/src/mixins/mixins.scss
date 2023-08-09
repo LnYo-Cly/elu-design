@@ -1,4 +1,4 @@
-// 公共的sass
+/* 公共的sass */
 
 @use 'config' as *;
 @forward 'config';
@@ -8,45 +8,45 @@
 例如: b(button) { color:red } => 最后会编译为 .ai-button { color: red }减少了重复操作
 */
 @mixin b($block) {
-    $B: $namespace+'-'+$block !global;
-    .#{$B} {
-      @content;
-    }
+  $B: $namespace + '-' + $block !global;
+  .#{$B} {
+    @content;
   }
-  
-  /**
+}
+
+/**
    添加状态
   when(disable) { ... }   => .ai-button.is-disable { ... }
   @at-root的作用是放在根下面
   */
-  @mixin when($state) {
-    @at-root {
-      &.#{$state-prefix + $state} {
-        @content;
-      }
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
     }
   }
-  
-  /**
+}
+
+/**
    添加修饰
   .ai-button.--primary
   */
-  @mixin m($modifier) {
-    @at-root {
-      #{&+$modifier-separator+$modifier} {
-        @content;
-      }
+@mixin m($modifier) {
+  @at-root {
+    #{& + $modifier-separator + $modifier} {
+      @content;
     }
   }
-  
-  /**
+}
+
+/**
   添加子层级元素
   e(header)  => .z-button--xxx .z-button__header
   */
-  @mixin e($element) {
-    @at-root {
-      #{& + $element-separator + $element} {
-        @content;
-      }
+@mixin e($element) {
+  @at-root {
+    #{& + $element-separator + $element} {
+      @content;
     }
-   }
+  }
+}

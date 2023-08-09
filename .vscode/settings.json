@@ -1,0 +1,9 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "off",
+  "editor.formatOnSave": true,
+  // 关闭 IDE 自带的样式验证
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
+}

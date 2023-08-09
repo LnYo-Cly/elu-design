@@ -1,6 +1,6 @@
 // import { WIcon,WButton } from "@quark-ui/components";
-import * as components from "@elu-design/components";
-import type { App } from "vue";
+import * as components from '@elu-design/components';
+import type { App } from 'vue';
 // const components = [WIcon,WButton];
 
 const install = (app: App) => {
@@ -15,11 +15,11 @@ const install = (app: App) => {
 };
 
 // app.use(QuarkUI)
-const EluDesign =  {
-  install
+const EluDesign = {
+  install,
 };
 export default EluDesign;
 
 // import { WIcon } from 'quark-ui
 //export * from "@elu-design/components";
-export * from "@elu-design/components";
+export * from '@elu-design/components';

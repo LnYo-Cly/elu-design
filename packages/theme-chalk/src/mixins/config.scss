@@ -1,14 +1,10 @@
-// 命名规范，BEM 规范
-$namespace: 'elu' !default; // 空间名称
-// 组件状态  is-disable
+/* 命名规范，BEM 规范 */
+// a
+$namespace: 'elu' !default;
 $state-prefix: 'is-';
-// 组件修饰符 .ai-button--primary
 $modifier-separator: '--';
-// 组件分割 .ai-button__header
 $element-separator: '__';
 
-
-
 * {
-    box-sizing: border-box;
-   }
+  box-sizing: border-box;
+}

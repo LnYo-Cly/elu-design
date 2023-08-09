@@ -1,0 +1,11 @@
+**.d.ts
+build
+dist
+node_modules
+es
+lib
+font
+types
+typings
+coverage
+cache

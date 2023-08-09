@@ -1,15 +1,14 @@
-import { outDir, projectRootPath, eluRootPath } from "./utils/paths";
-import glob from "fast-glob";
-import { Project, ModuleKind, ScriptTarget, SourceFile } from "ts-morph";
-import path from "path";
-import fs from "fs/promises";
-import { parallel, series } from "gulp";
-import { run, withTaskName, pathRewriter } from "./utils";
-import { buildConfig } from "./utils/config";
-
+import { outDir, projectRootPath, eluRootPath } from './utils/paths';
+import glob from 'fast-glob';
+import { Project, ModuleKind, ScriptTarget, SourceFile } from 'ts-morph';
+import path from 'path';
+import fs from 'fs/promises';
+import { parallel, series } from 'gulp';
+import { run, withTaskName, pathRewriter } from './utils';
+import { buildConfig } from './utils/config';
 
 export const genEntryTypes = async () => {
-  const files = await glob("*.ts", {
+  const files = await glob('*.ts', {
     cwd: eluRootPath,
     absolute: true,
     onlyFiles: true,
@@ -21,13 +20,13 @@ export const genEntryTypes = async () => {
       allowJs: true,
       emitDeclarationOnly: true,
       noEmitOnError: false,
-      outDir: path.resolve(outDir, "entry/types"),
+      outDir: path.resolve(outDir, 'entry/types'),
       target: ScriptTarget.ESNext,
       rootDir: eluRootPath,
       strict: false,
     },
     skipFileDependencyResolution: true,
-    tsConfigFilePath: path.resolve(projectRootPath, "tsconfig.json"),
+    tsConfigFilePath: path.resolve(projectRootPath, 'tsconfig.json'),
     skipAddingFilesFromTsConfig: true,
   });
   const sourceFiles: SourceFile[] = [];
@@ -45,27 +44,27 @@ export const genEntryTypes = async () => {
       await fs.mkdir(path.dirname(filepath), { recursive: true });
       await fs.writeFile(
         filepath,
-        pathRewriter("es")(outputFile.getText()),// @xlz-ui => xlz-ui/es xlz-ui/lib  处理路径
-        "utf8"
+        pathRewriter('es')(outputFile.getText()), // @xlz-ui => xlz-ui/es xlz-ui/lib  处理路径
+        'utf8',
       );
     }
   });
   await Promise.all(tasks);
 };
 export const copyEntryTypes = () => {
-  const src = path.resolve(outDir, "entry/types");
+  const src = path.resolve(outDir, 'entry/types');
   const copy = (module) =>
     parallel(
       withTaskName(`copyEntryTypes:${module}`, () =>
         run(
           `cp -r ${src}/* ${path.resolve(
             outDir,
-            buildConfig[module].output.path
-          )}/`
-        )
-      )
+            buildConfig[module].output.path,
+          )}/`,
+        ),
+      ),
     );
-  return parallel(copy("esm"), copy("cjs"));
+  return parallel(copy('esm'), copy('cjs'));
 };
 
 export const genTypes = series(genEntryTypes, copyEntryTypes());

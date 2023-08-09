@@ -1,0 +1,11 @@
+build
+dist
+docs
+node_modules
+types
+typings
+es
+lib
+__test__
+coverage
+cache

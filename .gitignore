@@ -9,3 +9,9 @@ packages/components.d.ts
 
 .idea
 .DS_Store
+
+coverage
+
+.pnpm-debug.log*
+.eslintcache
+docs/.vitepress/cache

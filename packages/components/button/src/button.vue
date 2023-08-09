@@ -1,14 +1,11 @@
 <template>
-    <button>
-
-        <slot></slot>
-    </button>
+  <button>
+    <slot></slot>
+  </button>
 </template>
-    
-<script setup lang='ts'>
-    defineOptions({
-        name: "EluButton"
-    })
-    
-</script>
 
+<script setup lang="ts">
+defineOptions({
+  name: 'EluButton',
+});
+</script>
