@@ -33,6 +33,7 @@ features:
     title: Ship Fast Sites
     details: Fast initial load with static HTML, fast post-load navigation with client-side routing.
 ---
+
 <style>
 :root {
   --vp-home-hero-name-color: transparent;

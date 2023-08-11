@@ -6,8 +6,12 @@
   <slot></slot>
 </template>
 <script lang="ts" setup>
-import { computed, CSSProperties } from 'vue';
-import '../font/iconfont.js'; //这里用了阿里适量
+import { computed, CSSProperties, onMounted } from 'vue';
+
+onMounted(() => {
+  import('../font/iconfont.js'); //这里用了阿里矢量库，因为js中含有window，需要浏览器环境才能运行
+});
+
 import { createNamespace } from '@elu-design/utils/create-bem';
 import { iconProps } from './icon';
 const bem = createNamespace('icon');
