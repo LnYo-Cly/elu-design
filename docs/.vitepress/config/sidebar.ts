@@ -15,8 +15,8 @@ export const getSiderbar = (): DefaultTheme.Sidebar => {
         items: [
           { text: '基础介绍', link: '/guide/base-introduce' },
           { text: '组件开发', link: '/guide/comp-develop' },
-          { text: '组件文档', link: '/guide/comp-docs' },
-          { text: '代码提交', link: '/guide/comp-commit' },
+          { text: '文档编写', link: '/guide/comp-docs' },
+          { text: '贡献指南', link: '/guide/comp-commit' },
         ],
       },
     ],
