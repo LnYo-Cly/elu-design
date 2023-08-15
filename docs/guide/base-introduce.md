@@ -16,7 +16,9 @@
 │  │  │  └─__test__               // vitest测试
 │  │  │  └─index.ts               // 导出单个组件
 │  │  ├─other-components
-│  │  └─index.ts                  // 导出所有组件
+│  │  └─components.ts             // 导出所有组件
+│  │  └─index.ts                  // 导出整体
+│  │  └─vite.config.ts            // vite打包配置
 │  ├─elu-design                   // 用于存放所有组件的导出入口
 │  ├─theme-chalk                  // 编写组件样式
 │  └─utils                        // 编写组件所需的工具类
@@ -40,6 +42,8 @@
 2. 如何构建？
 
    在根目录下运行`pnpm run build`即可构建，具体构建代码在`build/gulpfile.ts`，它会自动生成所有的打包文件以及声明文件，打包目录为`dist`
+
+   > 打包已经更换为vite打包，build目录下的打包文件不再使用，仅用来打包样式。
 
 3. 发布为你的npm
 

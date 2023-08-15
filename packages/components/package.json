@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "main": "index.ts",
   "author": "LnYo-Cly",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build"
+  }
 }

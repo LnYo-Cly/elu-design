@@ -19,15 +19,18 @@ export default defineConfig({
       '',
     ],
   ],
+
   themeConfig: {
     lastUpdatedText: '最近更新时间',
-
     //siteTitle: false,
     nav: getNav(),
     sidebar: getSiderbar(),
     socialLinks: [
       { icon: 'github', link: 'https://github.com/LnYo-Cly/elu-design' },
     ],
+    search: {
+      provider: 'local',
+    },
   },
   markdown: {
     lineNumbers: true,

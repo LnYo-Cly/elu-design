@@ -17,7 +17,7 @@ import { outDir, eluRootPath } from './utils/paths';
 import fs from 'fs/promises';
 import { buildConfig } from './utils/config';
 import { pathRewriter } from './utils';
-
+import json from '@rollup/plugin-json';
 const buildFull = async () => {
   // rollup 打包的配置信息
   const config = {
@@ -46,13 +46,15 @@ const buildFull = async () => {
   const buildConfig = [
     {
       format: 'umd', // 打包的格式
-      file: path.resolve(outDir, 'index.js'),
+      //file: path.resolve(outDir, 'index.js'),
+      dir: path.resolve(outDir),
       name: 'elu-design', // 全局变量名字
       exports: 'named', // 导出的名字 用命名的方式导出 libaryTarget:"" name:""
       globals: {
         // 表示使用的vue是全局的
         vue: 'Vue',
       },
+      inlineDynamicImports: true,
     },
     {
       format: 'esm',
@@ -64,7 +66,7 @@ const buildFull = async () => {
 
   return Promise.all(
     buildConfig.map((option) => {
-      bundle.write(option as OutputOptions);
+      return bundle.write(option as OutputOptions);
     }),
   );
 };

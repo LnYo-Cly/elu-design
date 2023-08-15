@@ -31,10 +31,10 @@ button {
 @use 'button.scss';
 ```
 
-4. 之后在`/packages/components/index.ts`导出你刚刚编写的组件。
+4. 之后在`/packages/components/components.ts`导出你刚刚编写的组件。
 
 ```ts
-// /packages/components/index.ts
+// /packages/components/components.ts
 // ......
 export * from './button';
 ```

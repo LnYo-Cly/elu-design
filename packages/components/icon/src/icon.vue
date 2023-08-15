@@ -2,8 +2,6 @@
   <svg :class="bem.b()" :style="style" aria-hidden="true">
     <use :xlink:href="iconName"></use>
   </svg>
-
-  <slot></slot>
 </template>
 <script lang="ts" setup>
 import { computed, CSSProperties, onMounted } from 'vue';

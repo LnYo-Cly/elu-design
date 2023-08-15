@@ -1,7 +1,18 @@
 <script setup lang="ts"></script>
 
 <template>
-  <elu-button style="color: aqua; background-color: aliceblue">按钮</elu-button>
+  <div class="demo">
+    <elu-button type="primary">Primary Button</elu-button>
+    <elu-button type="outline">Outline Button</elu-button>
+    <elu-button type="dashed">Dashed Button</elu-button>
+    <elu-button type="text">Text Button</elu-button>
+  </div>
 </template>
 
-<style></style>
+<style scoped lang="scss">
+.demo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+</style>

@@ -28,17 +28,17 @@ export default series(
     withTaskName('buildPackages', () =>
       run('pnpm run --parallel build --filter ./packages'),
     ), // 并行执行packages目录下的build脚本
-    withTaskName('buildFullComponent', () =>
-      run('pnpm run build buildFullComponent'),
-    ), // 执行build命令时会调用rollup，给rollup传参数buildFullComponent，那么就会执行导出任务叫buildFullComponent
-    withTaskName('buildComponent', () => run('pnpm run build buildComponent')),
+    //withTaskName('buildFullComponent', () =>
+    // run('pnpm run build buildFullComponent'),
+    //), // 执行build命令时会调用rollup，给rollup传参数buildFullComponent，那么就会执行导出任务叫buildFullComponent
+    //withTaskName('buildComponent', () => run('pnpm run build buildComponent')),
   ),
-  parallel(genTypes, copySourceCode()),
-  withTaskName('gen-comp-typing', () => run('pnpm run dts')),
-  withTaskName('procTypes', () => run('pnpm run build procTypes')),
+  //parallel(genTypes, copySourceCode()),
+  //withTaskName('gen-comp-typing', () => run('pnpm run dts')),
+  //withTaskName('procTypes', () => run('pnpm run build procTypes')),
 );
 
 // 任务执行器 gulp 任务名 就会执行对应的任务
-export * from './full-component';
-export * from './component';
-export * from './proc-types';
+//export * from './full-component';
+//export * from './component';
+//export * from './proc-types';

@@ -25,9 +25,13 @@ export const getSiderbar = (): DefaultTheme.Sidebar => {
       {
         text: '基本',
         items: [
-          { text: 'button 按钮', link: '/components/button/' },
-          { text: 'icon 图标', link: '/components/icon/' },
+          { text: 'Button 按钮', link: '/components/button/' },
+          { text: 'Icon 图标', link: '/components/icon/' },
         ],
+      },
+      {
+        text: 'DATA 数据展示',
+        items: [{ text: 'Badge 徽标', link: '/components/badge/' }],
       },
     ],
   };

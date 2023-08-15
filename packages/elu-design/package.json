@@ -8,17 +8,13 @@
     "elu design",
     "vue3"
   ],
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "types": "es/index.d.ts",
-  "unpkg": "index.js",
-  "jsdelivr": "index.js",
+  "main": "lib/components/index.js",
+  "module": "es/components/index.mjs",
+  "types": "es/components/index.d.ts",
   "files": [
     "es",
     "lib",
     "theme-chalk",
-    "index.esm.js",
-    "index.js",
     "LICENSE",
     "README.md"
   ],
@@ -27,8 +23,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/LnYo-Cly/elu-design"
-  },
-  "scripts": {
-    "release": "release-it"
   }
 }

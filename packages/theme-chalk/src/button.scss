@@ -1,0 +1,248 @@
+@use './mixins/mixins.scss' as *;
+@use './themes//default.scss';
+
+:root {
+  --disbaled-color: rgb(184, 184, 184) !important;
+  --disbaled-bgcolor: rgb(245, 245, 245) !important;
+}
+
+@include b(button) {
+  border: 0;
+  padding: 12px 24px;
+  font-size: 14px;
+  box-sizing: border-box;
+  text-align: center;
+  outline: none;
+  background: none;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  border-radius: 4px;
+  /*
+  &:hover {
+    opacity: 0.8;
+  }
+  */
+
+  @include e(wave) {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: wave 1.2s ease-out;
+    pointer-events: none;
+  }
+
+  @keyframes wave {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0.3;
+    }
+
+    100% {
+      width: 500px;
+      height: 500px;
+      opacity: 0;
+    }
+  }
+
+  @include m(default) {
+    color: #000;
+    border: 1px solid #d9d9d9f4;
+    &:hover {
+      color: var(--button-theme-primary);
+      border-color: #c6e2ff;
+      background-color: #ecf5ff;
+    }
+    .elu-button__wave {
+      background-color: var(--button-theme-primary);
+    }
+
+    @include when(disabled) {
+      cursor: not-allowed;
+      background-color: #fff;
+      color: #000;
+    }
+  }
+
+  @include m(primary) {
+    color: #fff;
+    background-color: var(--button-theme-primary);
+    transition: opacity 0.3s ease-out;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  @include m(text) {
+    color: var(--button-theme-primary);
+    position: relative;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      transition: background-color 0.3s ease-out;
+      opacity: 0.1;
+    }
+    &:hover::before {
+      background: currentColor;
+      opacity: 0.1;
+    }
+    &:active::before {
+      background: currentColor;
+      opacity: 0.1;
+    }
+    &:disabled {
+      color: var(--disbaled-color) !important;
+      cursor: not-allowed !important;
+      &:hover::before {
+        background: none;
+      }
+    }
+    .elu-button__wave {
+      background-color: currentColor;
+      opacity: 0.4;
+    }
+  }
+
+  @include m(outline) {
+    color: var(--button-theme-primary);
+    border: 1px solid currentColor;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      transition: background-color 0.3s ease-out;
+      opacity: 0.1;
+    }
+    &:hover::before {
+      background-color: currentColor;
+      opacity: 0.1;
+    }
+    &:disabled {
+      color: var(--disbaled-color) !important;
+      cursor: not-allowed !important;
+      &:hover::before {
+        background: none;
+      }
+    }
+    .elu-button__wave {
+      background-color: currentColor;
+      opacity: 0.4;
+    }
+  }
+
+  @include m(dashed) {
+    color: var(--button-theme-primary);
+    border: 1px dashed currentColor;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      transition: background-color 0.3s ease-out;
+      opacity: 0.1;
+    }
+    &:hover::before {
+      background-color: currentColor;
+      opacity: 0.1;
+    }
+    &:disabled {
+      color: var(--disbaled-color) !important;
+      cursor: not-allowed !important;
+      &:hover::before {
+        background: none;
+      }
+    }
+    .elu-button__wave {
+      background-color: currentColor;
+      opacity: 0.4;
+    }
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+    color: var(--disbaled-color);
+    background-color: var(--disbaled-bgcolor);
+    &:hover,
+    &:focus {
+      color: var(--disbaled-color);
+      background-color: var(--disbaled-bgcolor);
+    }
+  }
+
+  @include when(loading) {
+  }
+  @include when(plain) {
+  }
+}
+
+/*button size*/
+@include b(button) {
+  font-size: 14px;
+  @include m(large) {
+    min-height: 36px;
+    //padding: 6 18px;
+  }
+  @include m(medium) {
+    min-height: 32px;
+    padding: 0 16px;
+  }
+  @include m(small) {
+    min-height: 28px;
+    padding: 0 15px;
+  }
+  @include m(mini) {
+    height: 24px;
+    font-size: 12px;
+    padding: 0px 12px;
+  }
+}
+
+/*long button*/
+@include b(button) {
+  @include when(long) {
+    width: 100%;
+  }
+}
+
+/* shape */
+@include b(button) {
+  @include m(square) {
+    border-radius: 0px;
+  }
+
+  @include m(round) {
+    border-radius: 16px;
+  }
+
+  @include m(circle) {
+    border-radius: 50%;
+    padding: 0 8px;
+    aspect-ratio: 1 / 1;
+  }
+}

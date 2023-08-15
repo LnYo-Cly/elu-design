@@ -1,12 +1,37 @@
 // 这里放组件的props及公共方法
-import type { ExtractPropTypes } from 'vue';
-//  as const，会让对象的每个属性变成只读（readonly）
+import type { ExtractPropTypes, PropType } from 'vue';
+export type ButtonType = 'primary' | 'text' | 'outline' | 'dashed';
+export type ButtonSizeType = 'large' | 'medium' | 'small' | 'mini';
+export type ButtonShapeType = 'square' | 'round' | 'circle' | 'mini-round';
+export type ButtonStatusType =
+  | 'primary'
+  | 'success'
+  | 'info'
+  | 'warning'
+  | 'danger';
+
 export const buttonProps = {
+  type: {
+    type: String as PropType<ButtonType>,
+    default: 'outline',
+  },
+  round: Boolean,
+  circle: Boolean,
+  long: Boolean,
+  disabled: Boolean,
+  loading: Boolean,
   size: {
-    type: Number,
+    type: String as PropType<ButtonSizeType>,
+    default: 'medium',
+  },
+  status: {
+    type: String as PropType<ButtonStatusType>,
+  },
+  shape: {
+    type: String as PropType<ButtonShapeType>,
   },
   color: {
-    type: String,
+    type: String as PropType<ButtonStatusType | string>,
   },
 };
 

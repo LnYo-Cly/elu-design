@@ -51,16 +51,20 @@ const buildEachComponent = async () => {
       ],
       external: (id) => /^vue/.test(id) || /^@elu-design/.test(id), // 排除掉vue和@elu-design的依赖
     };
+    console.log(`output->config`, config);
     const bundle = await rollup(config);
     const options = Object.values(buildConfig).map((config) => ({
       format: config.format,
-      file: path.resolve(config.output.path, `components/${file}/index.js`),
+      //file: path.resolve(config.output.path, `components/${file}/index.js`),
+      dir: path.resolve(config.output.path, `components/${file}`),
       paths: pathRewriter(config.output.name), // @elu-design => @elu-design/es @elu-design/lib  处理路径
       exports: 'named',
     }));
 
     await Promise.all(
       options.map((option) => bundle.write(option as OutputOptions)),
+
+      //options.map((option) => bundle.write({...option, inlineDynamicImports:true}})),
     );
   });
 

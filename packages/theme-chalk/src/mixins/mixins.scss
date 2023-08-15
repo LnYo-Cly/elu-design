@@ -4,8 +4,9 @@
 @forward 'config';
 
 /**
- 命名空间函数
-例如: b(button) { color:red } => 最后会编译为 .ai-button { color: red }减少了重复操作
+ .block{
+
+ }
 */
 @mixin b($block) {
   $B: $namespace + '-' + $block !global;
@@ -16,7 +17,9 @@
 
 /**
    添加状态
-  when(disable) { ... }   => .ai-button.is-disable { ... }
+  .fu.state{
+
+  }
   @at-root的作用是放在根下面
   */
 @mixin when($state) {
@@ -29,7 +32,9 @@
 
 /**
    添加修饰
-  .ai-button.--primary
+  .fu--modifier{
+
+  }
   */
 @mixin m($modifier) {
   @at-root {
@@ -41,7 +46,9 @@
 
 /**
   添加子层级元素
-  e(header)  => .z-button--xxx .z-button__header
+  .fu__element{
+
+  }
   */
 @mixin e($element) {
   @at-root {

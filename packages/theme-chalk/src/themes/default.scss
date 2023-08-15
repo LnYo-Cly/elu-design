@@ -1,0 +1,16 @@
+:root {
+  --theme-primary: #1c9bf0;
+  --theme-success: #4caf50;
+  --theme-warning: #ff9800;
+  --theme-danger: #f44336;
+  --theme-info: #9e9e9e;
+  --theme-default: #ffffff;
+
+  /* button */
+  --button-theme-primary: var(--theme-primary);
+  --button-theme-success: var(--theme-success);
+  --button-theme-warning: var(--theme-warning);
+  --button-theme-danger: var(--theme-danger);
+  --button-theme-info: var(--theme-info);
+  --button-theme-default: var(--theme-default);
+}
